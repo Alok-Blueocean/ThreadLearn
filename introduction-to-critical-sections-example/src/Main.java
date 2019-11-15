@@ -39,6 +39,16 @@ public class Main {
         decrementingThread.join();
 
         System.out.println("We currently have " + inventoryCounter.getItems() + " items");
+        /*
+         * suppose it is written in this way in the beinning.
+         * then finally we will get 0 items.
+         * but in the current case we will get -Ve results.because it is not atomic operation
+         *      incrementingThread.start();
+        incrementingThread.join();
+        decrementingThread.start();
+        decrementingThread.join();
+         * 
+         */
     }
 
     public static class DecrementingThread extends Thread {

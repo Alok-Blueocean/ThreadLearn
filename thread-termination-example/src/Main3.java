@@ -28,12 +28,16 @@ import java.math.BigInteger;
  * Thread Termination & Daemon Threads
  * https://www.udemy.com/java-multithreading-concurrency-performance-optimization
  */
+/*
+ *Daemon threads are threads that run in background and don't prevent application to terminate if main thread terminates 
+ * */
+ 
 public class Main3 {
 
     public static void main(String[] args) throws InterruptedException {
         Thread thread = new Thread(new LongComputationTask(new BigInteger("200000"), new BigInteger("100000000")));
 
-        thread.setDaemon(true);
+        thread.setDaemon(true);// since we have sset the thread to daemon so even without handing interuption thread will terminate
         thread.start();
         Thread.sleep(100);
         thread.interrupt();

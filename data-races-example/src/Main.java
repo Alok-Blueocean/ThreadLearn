@@ -47,7 +47,7 @@ public class Main {
     }
 
     public static class SharedClass {
-        private int x = 0;
+        private int x = 0; // try putting volatile keyword and see
         private int y = 0;
 
         public void increment() {

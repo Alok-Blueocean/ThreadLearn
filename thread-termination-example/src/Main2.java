@@ -55,6 +55,9 @@ public class Main2 {
             BigInteger result = BigInteger.ONE;
 
             for (BigInteger i = BigInteger.ZERO; i.compareTo(power) != 0; i = i.add(BigInteger.ONE)) {
+            	
+            	//unless we write this interup logic the code will not be interuppted even if it is called
+            	// try removing this part of code and see
                 if (Thread.currentThread().isInterrupted()) {
                     System.out.println("Prematurely interrupted computation");
                     return BigInteger.ZERO;

@@ -101,6 +101,7 @@ public class Main {
         }
 
         public void takeRoadB() {
+        	// KEEP THE order same as above first road A and then road B then the Deadlock problem will not happen
             synchronized (roadB) {
                 System.out.println("Road B is locked by thread " + Thread.currentThread().getName());
 

@@ -47,7 +47,7 @@ public class Main {
         }
 
         for (Thread thread : threads) {
-            thread.join(2000);
+            thread.join(2000);// time inside join is for how long it will wait inspite it has not terminated
         }
 
         for (int i = 0; i < inputNumbers.size(); i++) {
